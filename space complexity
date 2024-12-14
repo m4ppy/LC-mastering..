@@ -1,0 +1,64 @@
+Q.how to figure out space complexity of algorithms about DSA problems in leetcode?
+
+Determining the space complexity of algorithms in data structures and algorithms (DS&A) problems on LeetCode involves analyzing how much additional memory the algorithm uses as the input size grows. Here’s a step-by-step guide to help you figure it out:
+
+1. Understand Space Complexity
+Space complexity includes:
+  1. Auxiliary Space: Temporary memory used by the algorithm, such as variables, recursion stack, or data structures.
+  2. Input Space: Memory taken by the input itself. Usually not considered unless copying or modifying the input.
+  
+2. Steps to Calculate Space Complexity
+  a. Identify Variable Usage
+    Look at how many variables you are using. Primitive data types like int, float, or char take constant space (O(1)).
+  b. Check for Data Structures
+    If you use additional data structures like arrays, lists, dictionaries, stacks, queues, or heaps, evaluate their size relative to the input. For example:
+      - List/Array with n elements → O(n)
+      - Hash Map/Dictionary with n elements → O(n)
+      - Stack/Queue → Depends on the size of the problem, often O(n).
+  c. Consider Recursive Calls
+    Recursive algorithms use stack space for each function call.
+    If there are n recursive calls, and each call uses constant space, the space complexity is O(n).
+      Example: Recursive DFS in a graph with n nodes → O(n) space due to recursion stack.
+  d. Account for Temporary Variables
+    Temporary structures like visited arrays or any data structures initialized during the algorithm contribute to space complexity.
+  e. Check for Modifications to Input
+    If input arrays/lists are modified or sliced, those operations may incur additional memory.
+    Example: Slicing a list in Python creates a new list → O(k), where k is the slice length.
+  f. Big-O Notation
+    Express the space complexity using Big-O notation, considering only the dominant term.
+    
+3. Example Problems
+  Example 1: Two Sum 
+    Algorithm:
+      Store elements in a hash map while iterating through the array.
+    Space complexity:
+      Input array → O(n) (not counted in auxiliary space)
+      Hash map → O(n)
+      Overall → O(n)
+  Example 2: Merge Two Sorted Lists (LeetCode 21)
+    Algorithm:
+      Merge two linked lists iteratively or recursively.
+    Space complexity:
+      Iterative: O(1) (no extra memory except a few pointers)
+      Recursive: O(n + m) (stack space for recursion)
+  Example 3: Depth-First Search (DFS) on a Graph
+    Algorithm:
+      Use recursion or an explicit stack.
+    Space complexity:
+      Recursion stack: O(V), where V is the number of vertices.
+      Visited array: O(V)
+      Adjacency list: O(V + E)
+      Overall: O(V + E)
+
+4. Tips to Master Space Complexity
+  Trace Memory Usage: Walk through your code line by line to identify temporary variables and data structures.
+  Analyze Recursion: If using recursion, count the maximum depth of recursive calls.
+  Optimize: Reduce space usage by reusing variables or using in-place techniques.
+  Practice: Solve problems with explicit space requirements, e.g., in-place sorting.
+
+5. Practice Problems
+  Easy: Two Sum, Reverse Linked List
+  Medium: Daily Temperatures, Min Stack
+  Hard: Trapping Rain Water, Merge K Sorted Lists
+
+By analyzing the algorithm's logic and keeping the above points in mind, you’ll build the intuition to evaluate space complexity quickly.
