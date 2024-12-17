@@ -39,5 +39,9 @@ class Solution:
             num_map[num] = i
         return []
 
-# Approach 3: Two Pointers
-# It can't solve this problem cause Two Pointers must need sorting a array but this problem want indices. if it is sorted, it's indices can be changed.
+# Approach 3: Two Pointers (Not Applicable Here)
+# Time complexity (if used): O(n log n) for sorting + O(n) for two-pointer traversal.
+# Why it doesn't work:
+# Two Pointers require the array to be sorted, but sorting changes the indices,
+# and this problem explicitly asks for the original indices of the solution.
+# Therefore, the Two Pointers technique is not suitable for this problem.
